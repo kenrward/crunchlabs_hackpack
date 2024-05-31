@@ -21,8 +21,8 @@
 //defines the specific command code for each button on the remote
 #define left 0x8
 #define right 0x5A
-#define down 0x52
-#define up 0x18
+#define up 0x52
+#define down 0x18
 #define ok 0x1C
 #define cmd1 0x45
 #define cmd2 0x46
@@ -85,33 +85,7 @@ void loop() {
         */
         IrReceiver.resume(); // Enable receiving of the next value
 
-         /*
-        * Finally, check the received data and perform actions according to the received command
-        */
-
-        switch(IrReceiver.decodedIRData.command){ //this is where the commands are handled
-
-            case up://pitch up
-              Serial.print(F("up"));
-              break;
-            
-            case down://pitch down
-              Serial.print(F("down"));
-              break;
-
-            case left://fast counterclockwise rotation
-              Serial.print(F("left"));
-              break;
-            
-            case right://fast clockwise rotation
-              Serial.print(F("right"));
-              break;
-            
-
-        }
     }
-    delay(5);
-
 }
 
 void directionControl() {
